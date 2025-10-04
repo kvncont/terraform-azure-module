@@ -1,0 +1,38 @@
+{
+  "name": "Terraform Azure Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+
+  "postCreateCommand": "curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-vscode.azurecli",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "terraform.languageServer": {
+          "enabled": true
+        },
+        "files.associations": {
+          "*.tf": "terraform"
+        }
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}
