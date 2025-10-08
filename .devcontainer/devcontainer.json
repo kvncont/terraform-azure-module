@@ -1,0 +1,56 @@
+{
+  "name": "Terraform Azure Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-vscode.azurecli",
+        "eamodio.gitlens",
+        "github.copilot",
+        "github.copilot-chat"
+      ],
+      "settings": {
+        "terraform.languageServer": {
+          "enabled": true
+        },
+        "files.associations": {
+          "*.tf": "terraform"
+        },
+        "editor.tabSize": 2,
+        "[terraform]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        },
+        "[terraform-vars]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        }
+      }
+    },
+    "codespaces": {
+      "repositories": {
+        "kvncont/terraform-azure-module": {
+          "permissions": {
+            "contents": "write"
+          }
+        }
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}
