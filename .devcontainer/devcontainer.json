@@ -11,17 +11,20 @@
     },
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
+    },
+    "ghcr.io/devcontainers-contrib/features/tflint:2": {
+      "version": "latest"
     }
   },
-
-  "postCreateCommand": "curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash",
 
   "customizations": {
     "vscode": {
       "extensions": [
         "hashicorp.terraform",
         "ms-vscode.azurecli",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "github.copilot",
+        "github.copilot-chat"
       ],
       "settings": {
         "terraform.languageServer": {
@@ -29,6 +32,24 @@
         },
         "files.associations": {
           "*.tf": "terraform"
+        },
+        "editor.tabSize": 2,
+        "[terraform]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        },
+        "[terraform-vars]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true
+        }
+      }
+    },
+    "codespaces": {
+      "repositories": {
+        "kvncont/terraform-azure-module": {
+          "permissions": {
+            "contents": "write"
+          }
         }
       }
     }
