@@ -58,8 +58,31 @@ The repository includes automated workflows for:
 
 - **Terraform Validation**: Format checking, initialization, and syntax validation
 - **Static Analysis**: TFLint for detecting errors and best practice violations
+- **Release Drafter**: Automated release notes generation with semantic versioning
 
 All workflows run automatically on pull requests and pushes to the main branch.
+
+## Releases
+
+This repository uses [Release Drafter](https://github.com/release-drafter/release-drafter) to automatically generate release notes and manage semantic versioning.
+
+### Semantic Versioning
+
+Pull requests are automatically categorized based on labels:
+
+- **Major version** (breaking changes): Use labels `major`, `breaking`, or `breaking-change`
+- **Minor version** (new features): Use labels `minor`, `feature`, or `enhancement`
+- **Patch version** (bug fixes, maintenance): Use labels `patch`, `fix`, `bugfix`, `bug`, `chore`, `maintenance`, `documentation`, or `docs`
+
+### Release Categories
+
+Release notes are organized into the following categories:
+
+- 🚀 **Features**: New features and enhancements
+- 🐛 **Bug Fixes**: Bug fixes and corrections
+- 🧰 **Maintenance**: Maintenance and chore tasks
+- 📝 **Documentation**: Documentation updates
+- ⚠️ **Breaking Changes**: Breaking changes requiring attention
 
 ## Contributing
 
